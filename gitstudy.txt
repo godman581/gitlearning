@@ -1,0 +1,67 @@
+1、初始化仓库
+git init
+
+git add -A 
+
+git commit -m 'comment'
+
+git status
+
+git log
+
+git diff 查看变化
+
+二、版本回退
+git log
+git reset --hard 前7位版本号  回到之前版本
+
+
+又回到最新版本
+git reflog
+git reset --hard 前7位版本号  回到之后版本
+
+
+三、清除未追踪的文件
+git clean -xf
+注：这个命令的杀伤力比较大，它删除当前目录下所有没有track过的文件。不管它是否是.gitignore文件里面指定的文件夹和文件。
+
+
+四、关于git status中文乱码问题
+解决办法：
+git config --global core.quotepath false
+
+
+git log 中文乱码问题
+git config --global i18n.commitencoding utf-8
+git config --global i18n.logoutputencoding utf-8
+
+
+六、本地Git和Github的连接
+1、到github注册账号
+2、本地配置用户名和邮箱
+git config --global user.name "你的用户名"
+git config --global user.email "你的邮箱"
+或者
+你直接在config文件里改，位置在 C:\Users\你的用户名\.gitconfig
+
+查看配置：
+git config -l
+
+
+3、生成ssh key
+ssh-keygen -t rsa -C "你的邮箱"
+
+直接回车即可
+
+将生成的ssh key复制到剪贴板，执行 clip < ~/.ssh/id_rsa.pub （或者到上图提示的路径里去打开文件并复制）
+
+测试关联是成功：
+ssh -T git@github.com
+
+
+4、关联github
+git remote add origin git@github.com:godman581/gitlearning.git（github地址ssh）
+
+git push -u origin master
+
+以后想在commit后同步到Github上，只要直接执行 git push 就行啦：

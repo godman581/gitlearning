@@ -53,6 +53,10 @@ ssh-keygen -t rsa -C "你的邮箱"
 
 直接回车即可
 
+或打开：
+C:\Users\cjp\.ssh文件夹下的
+id_rsa.pub文件里面的key
+
 将生成的ssh key复制到剪贴板，执行 clip < ~/.ssh/id_rsa.pub （或者到上图提示的路径里去打开文件并复制）
 
 测试关联是成功：
@@ -65,3 +69,11 @@ git remote add origin git@github.com:godman581/gitlearning.git（github地址ssh
 git push -u origin master
 
 以后想在commit后同步到Github上，只要直接执行 git push 就行啦：
+
+
+
+七、Github的其他介绍
+1）获取其他人的远程仓库
+1、复制别人远程仓库的SSH。方法和上面关联git一样，进入仓库页面后，就能找到SSH地址。
+2、执行 
+git clone 复制的SSH地址

@@ -9,7 +9,7 @@ git status
 
 git log
 
-git diff 查看变化
+git diff [文件名] 查看变化
 
 二、版本回退
 git log
@@ -17,8 +17,23 @@ git reset --hard 前7位版本号  回到之前版本
 
 
 又回到最新版本
+查看版本号:
+git reflog   
+
+git reset --hard 前7位版本号  回到之后版本
+
+又回到最新版本
 git reflog
 git reset --hard 前7位版本号  回到之后版本
+
+回到上一个版本：
+git reset --hard HEAD^
+
+回到上上一个版本：
+git reset --hard HEAD^^
+
+回到前100个版本：
+git reset --hard HEAD~100
 
 
 三、清除未追踪的文件

@@ -100,10 +100,56 @@ git push -u origin master
 
 以后想在commit后同步到Github上，只要直接执行 git push 就行啦：
 
-
+以上只有一个主分支叫：master
 
 七、Github的其他介绍
 1）获取其他人的远程仓库
 1、复制别人远程仓库的SSH。方法和上面关联git一样，进入仓库页面后，就能找到SSH地址。
-2、执行 
-git clone 复制的SSH地址
+2、执行以下命令：
+
+git clone 复制的SSH地址   （是从远程仓库下载代码到本地）
+
+
+
+六：创建与合并分支
+
+查看当前分支命令：
+git branch
+
+创建分支命令：
+git branch 分支名
+
+切换到指定分支命令：
+git checkout 分支名
+
+创建并切换到分支：
+git checkout -b 分支名
+
+git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令
+
+git branch dev
+
+git checkout dev
+
+合并分支命令：
+git merge 要合并的分支名
+
+说明：git merge命令用于合并指定分支到当前分支上
+
+例：把dev分支合并到master，先切换到master分支，并执行以下命令：
+git merge dev
+
+
+总结创建与合并分支命令如下：
+
+查看分支：git branch
+
+创建分支：git branch name
+
+切换分支：git checkout name
+
+创建+切换分支：git checkout –b name
+
+合并某分支到当前分支：git merge name
+
+删除分支：git branch –d name

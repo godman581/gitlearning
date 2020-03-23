@@ -36,6 +36,20 @@ git reset --hard HEAD^^
 git reset --hard HEAD~100
 
 
+查看文件内容命令：
+cat 文件名
+
+撤销修改:
+
+git checkout 文件名 意思就是，把指定文件在工作区做的修改全部撤销
+两种情况：
+1、readme.txt自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。
+2、另外一种是readme.txt已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
+
+
+删除文件命令：
+rm 文件名
+
 三、清除未追踪的文件
 git clean -xf
 注：这个命令的杀伤力比较大，它删除当前目录下所有没有track过的文件。不管它是否是.gitignore文件里面指定的文件夹和文件。
@@ -62,6 +76,7 @@ git config --global user.email "你的邮箱"
 查看配置：
 git config -l
 
+远程仓库：
 
 3、生成ssh key
 ssh-keygen -t rsa -C "你的邮箱"
